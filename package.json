@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mgarsteck/stellarnode#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "stellar-sdk": "^4.0.0"
   }
 }
