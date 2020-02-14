@@ -4,6 +4,7 @@
   "description": "Test Stellar SDK",
   "main": "index.js",
   "scripts": {
+    "devStart": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,11 @@
   "homepage": "https://github.com/mgarsteck/stellarnode#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "bcrypt": "^3.0.8",
+    "express": "^4.17.1",
     "stellar-sdk": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
