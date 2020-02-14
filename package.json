@@ -1,0 +1,22 @@
+{
+  "name": "stellarnode",
+  "version": "1.0.0",
+  "description": "Test Stellar SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgarsteck/stellarnode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgarsteck/stellarnode/issues"
+  },
+  "homepage": "https://github.com/mgarsteck/stellarnode#readme",
+  "dependencies": {
+    "stellar-sdk": "^4.0.0"
+  }
+}
