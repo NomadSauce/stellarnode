@@ -6,8 +6,10 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bcrypt = require('bcrypt');
+const bodyParser = require('body-parser')
 
-const indexRouter = require('./routes/index')
+const indexRouter = require('./routes/index');
+const authorRouter = require('./routes/authors');
 
 app.use(express.json());
 
@@ -16,7 +18,9 @@ app.set('views', __dirname + '/views');
 app.set('layout', 'layouts/layout');
 app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
+// Stuff for setting up MongoDB
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true });
@@ -25,11 +29,11 @@ db.on('error', error => console.log(error));
 db.once('open', () => console.log('Connected to MongoDB'));
 
 app.use('/', indexRouter);
+app.use('/authors', authorRouter);
 
 
 
 // Stuff for users
-
 
 const users = [];
 
@@ -64,4 +68,4 @@ app.post('/users/login', async (req, res) => {
     }
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 3333);
